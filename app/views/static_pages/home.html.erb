@@ -6,6 +6,18 @@
     RAD Assignment
   </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "Sign up now", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+<div class="row">
+  <div class="column">
+    <h3>View Course as Guest User</h3>
+    <p>Browse and view courses as a guest and sign up later</p>
+    <%= link_to "Browse all courses", '#', class: "btn btn-lg btn-primary" %>
+  </div>
+  <div class="column">
+    <h3>Sign in to your account</h3>
+    <p>Update your courses, rate courses, view coordinator infomatinos</p>
+    <%= link_to "Log in to your account", login_path, class: "btn btn-lg btn-primary" %>
+  </div>
 </div>
 

@@ -32,6 +32,19 @@ textarea {
   }
 }
 
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
