@@ -36,9 +36,10 @@ textarea {
   float: left;
   width: 30%;
   padding: 10px;
+  padding-left: 10px;
 }
 
-/* Clear floats after the columns */
+
 .row:after {
   content: "";
   display: table;
@@ -67,6 +68,14 @@ h2 {
   color: $gray-light;
 }
 
+h3 {
+  font-weight: bold;
+}
+h4 {
+  font-size: 3;
+  font-weight: bold;
+}
+
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -93,26 +102,35 @@ p {
 /* footer */
 
 footer {
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+  font-size: 3;
+  background-color: lightgrey;
+  box-sizing:		border-box;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+  padding-left: 10px;
   a {
     color: $gray;
     &:hover {
       color: $gray-darker;
     }
   }
-  small {
-    float: left;
-  }
-  ul {
-    float: right;
+  
+  ul {  
     list-style: none;
-    li {
-      float: left;
-      margin-left: 15px;
-    }
+    padding-left: 0px;
   }
 }
 
