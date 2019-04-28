@@ -32,6 +32,13 @@ textarea {
   }
 }
 
+input [type=text]  {
+      border: 0;
+      outline: 0;
+      background: transparent;
+      border-bottom: 1px solid black;
+}
+
 .column {
   float: left;
   width: 30%;
@@ -45,6 +52,8 @@ textarea {
   display: table;
   clear: both;
 }
+
+
 
 /* typography */
 
@@ -102,36 +111,46 @@ p {
 /* footer */
 
 footer {
-.column {
-  float: left;
-  width: 25%;
-  padding: 10px;
-}
+    
+    .column {
+      float: left;
+      width: 25%;
+      padding: 10px;
+    }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-  font-size: 3;
-  background-color: lightgrey;
-  box-sizing:		border-box;
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  padding-left: 10px;
-  a {
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+    font-size: 3;
+    background-color: lightgrey;
+    box-sizing:		border-box;
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid $gray-medium-light;
+    padding-left: 10px;
+    
+    
+    a {
     color: $gray;
     &:hover {
       color: $gray-darker;
     }
-  }
-  
-  ul {  
+    }
+
+    ul {  
     list-style: none;
     padding-left: 0px;
-  }
+    }
+
+    textarea, input {
+      border: 0;
+      outline: 0;
+      background: transparent;
+      border-bottom: 1px solid black;
+    }
 }
 
 /* sidebar */
