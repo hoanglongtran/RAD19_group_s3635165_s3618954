@@ -1,0 +1,19 @@
+<% provide(:title, 'All courses') %>
+<h1>All courses</h1>
+
+<ul class="courses">
+  <% @courses.each do |course| %>
+    <h1>
+      <%= link_to course.name, course %>
+    </h1>
+    <h2>
+      <%= course.category %>
+    </h2>
+    <h2>
+      <%= course.location %>
+    </h2>
+    <h2>
+      <%= course.created_at %>
+
+  <% end %>
+</ul>
