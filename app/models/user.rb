@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+	has_many :courses
 	validates(:name, presence: true, length: { maximum: 50, minimum: 4})
 	VALID_EMAIL_REGEX = /\A\w+\.\w+@rmit\.edu\.au\z/i
 	validates:email, presence: true, length: { maximum: 255, minimum: 4}, 

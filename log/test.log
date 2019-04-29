@@ -3729,3 +3729,314 @@ UserTest: test_should_be_vaild
 ------------------------------
   [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "user@example.com"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (116.3ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "category" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (75.2ms)[0m  [1m[35mCREATE TABLE "courses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "location_id" integer, "category_id" integer, "user_id" integer, "prerequisite_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (67.7ms)[0m  [1m[35mCREATE  INDEX "index_courses_on_category_id" ON "courses" ("category_id")[0m
+  [1m[35m (74.0ms)[0m  [1m[35mCREATE  INDEX "index_courses_on_location_id" ON "courses" ("location_id")[0m
+  [1m[35m (74.8ms)[0m  [1m[35mCREATE  INDEX "index_courses_on_prerequisite_id" ON "courses" ("prerequisite_id")[0m
+  [1m[35m (66.1ms)[0m  [1m[35mCREATE  INDEX "index_courses_on_user_id" ON "courses" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "locations"[0m
+  [1m[35m (58.5ms)[0m  [1m[35mCREATE TABLE "locations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "location" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (74.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "password_digest" varchar)[0m
+  [1m[35m (75.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (76.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (54.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190429082832)[0m
+  [1m[35m (49.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190429075703),
+(20190417170157),
+(20190417170704),
+(20190429075647),
+(20190417133852);
+
+[0m
+  [1m[35m (80.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-04-29 08:34:38.324910"], ["updated_at", "2019-04-29 08:34:38.324910"]]
+  [1m[35m (53.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "courses"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 08:34:38.481243', '2019-04-29 08:34:38.481243', 980190962, 980190962, 980190962, 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 08:34:38.481243', '2019-04-29 08:34:38.481243', 298486374, 298486374, 298486374, 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$A/89hgTgPIt0cyzIQhIDSORpS7T1ujgPz3T2l3IAbM4.6a1x3SThS', '2019-04-29 08:34:38.483343', '2019-04-29 08:34:38.483343', 762146111)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:34:38.484491', '2019-04-29 08:34:38.484491', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:34:38.484491', '2019-04-29 08:34:38.484491', 298486374)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:34:38.485432', '2019-04-29 08:34:38.485432', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:34:38.485432', '2019-04-29 08:34:38.485432', 298486374)[0m
+  [1m[35m (112.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CoursetTest: test_should_be_valid
+---------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CoursetTest: test_user_id_should_be_present
+-------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "courses"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 08:38:21.029321', '2019-04-29 08:38:21.029321', 980190962, 980190962, 980190962, 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 08:38:21.029321', '2019-04-29 08:38:21.029321', 298486374, 298486374, 298486374, 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$AWylMbws5/TrL9PAw8865O/DabrpthDzLBBwnPMPGlSiQCmgf5dPe', '2019-04-29 08:38:21.031168', '2019-04-29 08:38:21.031168', 762146111)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:38:21.032127', '2019-04-29 08:38:21.032127', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:38:21.032127', '2019-04-29 08:38:21.032127', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:38:21.032918', '2019-04-29 08:38:21.032918', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:38:21.032918', '2019-04-29 08:38:21.032918', 298486374)[0m
+  [1m[35m (96.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CoursetTest: test_user_id_should_be_present
+-------------------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CoursetTest: test_should_be_valid
+---------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.5ms)[0m  [1m[31mDELETE FROM "courses"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 08:39:02.861523', '2019-04-29 08:39:02.861523', 980190962, 980190962, 980190962, 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 08:39:02.861523', '2019-04-29 08:39:02.861523', 298486374, 298486374, 298486374, 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$DAagGbzXHoflOxEKHZQWsujaqjGOZFgecVcTyzJ1aEXiV3nRfVsze', '2019-04-29 08:39:02.862936', '2019-04-29 08:39:02.862936', 762146111)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:39:02.863940', '2019-04-29 08:39:02.863940', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:39:02.863940', '2019-04-29 08:39:02.863940', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:39:02.864942', '2019-04-29 08:39:02.864942', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:39:02.864942', '2019-04-29 08:39:02.864942', 298486374)[0m
+  [1m[35m (98.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CoursetTest: test_should_be_valid
+---------------------------------
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CoursetTest: test_user_id_should_be_present
+-------------------------------------------
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 762146111], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "courses"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 08:40:05.808426', '2019-04-29 08:40:05.808426', 980190962, 980190962, 980190962, 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 08:40:05.808426', '2019-04-29 08:40:05.808426', 298486374, 298486374, 298486374, 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$xDd5fOtjrBN/spDoSjHwEu29RibHzm6Ey7dTE0DLDTAIr963p6V0S', '2019-04-29 08:40:05.809763', '2019-04-29 08:40:05.809763', 762146111)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:40:05.810871', '2019-04-29 08:40:05.810871', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:40:05.810871', '2019-04-29 08:40:05.810871', 298486374)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:40:05.811658', '2019-04-29 08:40:05.811658', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 08:40:05.811658', '2019-04-29 08:40:05.811658', 298486374)[0m
+  [1m[35m (94.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CoursetTest: test_user_id_should_be_present
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CoursetTest: test_should_be_valid
+---------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (22.6ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (25.4ms)[0m  [1m[31mDELETE FROM "courses"[0m
+  [1m[36mFixture Delete (0.6ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:38:57.310845', '2019-04-29 13:38:57.310845', 980190962, 980190962, 980190962, 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:38:57.310845', '2019-04-29 13:38:57.310845', 298486374, 298486374, 298486374, 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$cXYZBIvFidmOm62t3MxU8.wKdLOc4sGnPLg43RR4Ym/vZzC.Rv4/6', '2019-04-29 13:38:57.342889', '2019-04-29 13:38:57.342889', 762146111)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:38:57.344258', '2019-04-29 13:38:57.344258', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:38:57.344258', '2019-04-29 13:38:57.344258', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:38:57.345338', '2019-04-29 13:38:57.345338', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:38:57.345338', '2019-04-29 13:38:57.345338', 298486374)[0m
+  [1m[35m (114.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CoursetTest: test_should_be_valid
+---------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CoursetTest: test_user_id_should_be_present
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "courses"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:41:28.175025', '2019-04-29 13:41:28.175025', 980190962, 980190962, 980190962, 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:41:28.175025', '2019-04-29 13:41:28.175025', 298486374, 298486374, 298486374, 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$6G0jXQ2o54QY5QdI0yNnWeMTwCPY1spmYnBrLjFX9sTb5MS8mdHmO', '2019-04-29 13:41:28.176610', '2019-04-29 13:41:28.176610', 762146111)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:41:28.177809', '2019-04-29 13:41:28.177809', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:41:28.177809', '2019-04-29 13:41:28.177809', 298486374)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:41:28.178806', '2019-04-29 13:41:28.178806', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:41:28.178806', '2019-04-29 13:41:28.178806', 298486374)[0m
+  [1m[35m (135.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CoursetTest: test_should_be_valid
+---------------------------------
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CoursetTest: test_user_id_should_be_present
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "courses"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:51:47.500510', '2019-04-29 13:51:47.500510', 980190962, 980190962, 980190962, 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:51:47.500510', '2019-04-29 13:51:47.500510', 298486374, 298486374, 298486374, 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$HzrL8g4lgXKm5tP77RB4Te6IdZU6I6Yg3uPJThUvIfZEs2mR0tJOm', '2019-04-29 13:51:47.501928', '2019-04-29 13:51:47.501928', 762146111)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:51:47.503116', '2019-04-29 13:51:47.503116', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:51:47.503116', '2019-04-29 13:51:47.503116', 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:51:47.504192', '2019-04-29 13:51:47.504192', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:51:47.504192', '2019-04-29 13:51:47.504192', 298486374)[0m
+  [1m[35m (56.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CoursetTest: test_user_id_should_be_present
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CoursetTest: test_should_be_valid
+---------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "courses"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:52:16.095009', '2019-04-29 13:52:16.095009', 980190962, 980190962, 980190962, 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:52:16.095009', '2019-04-29 13:52:16.095009', 298486374, 298486374, 298486374, 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$iuH6BuqTLjZOMXXsk/I2nO3crIOgjFSGgk4.z4sXa/Xdn7AE/j7He', '2019-04-29 13:52:16.096777', '2019-04-29 13:52:16.096777', 762146111)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:52:16.097936', '2019-04-29 13:52:16.097936', 980190962)[0m
+  [1m[36mFixture Insert (0.2ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:52:16.097936', '2019-04-29 13:52:16.097936', 298486374)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:52:16.102501', '2019-04-29 13:52:16.102501', 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:52:16.102501', '2019-04-29 13:52:16.102501', 298486374)[0m
+  [1m[35m (108.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CoursetTest: test_should_be_valid
+---------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CoursetTest: test_user_id_should_be_present
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "courses"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:53:09.458628', '2019-04-29 13:53:09.458628', 980190962, 980190962, 980190962, 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:53:09.458628', '2019-04-29 13:53:09.458628', 298486374, 298486374, 298486374, 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$pgiiH/e8l8MevHdjWFnT.ONWf2xeWsRmHW/yWGmj3LtcmQt18jG9y', '2019-04-29 13:53:09.460298', '2019-04-29 13:53:09.460298', 762146111)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:53:09.461308', '2019-04-29 13:53:09.461308', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:53:09.461308', '2019-04-29 13:53:09.461308', 298486374)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:53:09.462312', '2019-04-29 13:53:09.462312', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:53:09.462312', '2019-04-29 13:53:09.462312', 298486374)[0m
+  [1m[35m (367.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CoursetTest: test_should_be_valid
+---------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CoursetTest: test_user_id_should_be_present
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixture Delete (0.2ms)[0m  [1m[31mDELETE FROM "courses"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mFixture Delete (0.0ms)[0m  [1m[31mDELETE FROM "locations"[0m
+  [1m[36mFixture Delete (0.1ms)[0m  [1m[31mDELETE FROM "categories"[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:53:40.266376', '2019-04-29 13:53:40.266376', 980190962, 980190962, 980190962, 980190962, 980190962)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "courses" ("name", "created_at", "updated_at", "id", "location_id", "category_id", "user_id", "prerequisite_id") VALUES ('MyString', '2019-04-29 13:53:40.266376', '2019-04-29 13:53:40.266376', 298486374, 298486374, 298486374, 298486374, 298486374)[0m
+  [1m[36mFixture Insert (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('Michael Example', 'michael@example.com', '$2a$04$30FEdaErphPn55LvZZgYWOZZb.GItCqhYVL.7eVQgI0TNrIFd7lvq', '2019-04-29 13:53:40.268256', '2019-04-29 13:53:40.268256', 762146111)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:53:40.269081', '2019-04-29 13:53:40.269081', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:53:40.269081', '2019-04-29 13:53:40.269081', 298486374)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:53:40.270086', '2019-04-29 13:53:40.270086', 980190962)[0m
+  [1m[36mFixture Insert (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at", "id") VALUES ('MyString', '2019-04-29 13:53:40.270086', '2019-04-29 13:53:40.270086', 298486374)[0m
+  [1m[35m (94.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+---------------------------------
+CoursetTest: test_should_be_valid
+---------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+-------------------------------------------
+CoursetTest: test_user_id_should_be_present
+-------------------------------------------
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
