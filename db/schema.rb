@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_29_082832) do
+ActiveRecord::Schema.define(version: 2019_04_30_140508) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category"
@@ -20,22 +20,28 @@ ActiveRecord::Schema.define(version: 2019_04_29_082832) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
-    t.integer "location_id"
-    t.integer "category_id"
     t.integer "user_id"
-    t.integer "prerequisite_id"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_courses_on_category_id"
-    t.index ["location_id"], name: "index_courses_on_location_id"
-    t.index ["prerequisite_id"], name: "index_courses_on_prerequisite_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
+  end
+
+  create_table "courses_locations", id: false, force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "location_id"
   end
 
   create_table "locations", force: :cascade do |t|
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "locations_courses", id: false, force: :cascade do |t|
+    t.integer "course_id"
+    t.integer "location_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -2,14 +2,10 @@
 
 one:
   name: MyString
-  location: one
-  category: one
   user: one
-  prerequisite: one
+  category: one
 
 two:
   name: MyString
-  location: two
-  category: two
   user: two
-  prerequisite: two
+  category: two
