@@ -1,19 +1,42 @@
 <% provide(:title, 'All courses') %>
 <h1>All courses</h1>
 
+
 <ul class="courses">
   <% @courses.each do |course| %>
-    <h1>
-      <%= link_to course.name, course %>
-    </h1>
-    <h2>
-      <%= course.category %>
-    </h2>
-    <h2>
-      <%= course.location %>
-    </h2>
-    <h2>
-      <%= course.created_at %>
+    
+    <div class="row">
+	  <aside class="col-md-4">
+	    <section class="course_info">
+	      <h1>
+		<%= gravatar_course @course %>
+		<%= @course %>
+	      </h1>
+	    </section>
+	  </aside>
+
+	<h1>         
+	<%= course.name %>
+ 	</h1>
+	<h2>
+	  <%= course.category %>
+          <%= course.locations %>
+          <%= course.created_at %>
+	</h2>
+    </div>
 
   <% end %>
 </ul>
+
+
+<%# <h1>
+      <%= link_to course.name, course %>
+    </h1>
+    <h2>
+      <%# course.category %>
+    </h2>
+    <h2>
+      <%# course.location %>
+    </h2>
+    <h2>
+      <%# course.created_at %>

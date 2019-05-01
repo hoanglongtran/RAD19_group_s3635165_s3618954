@@ -6481,3 +6481,61 @@ Migrating to CoursesLocations (20190430140508)
   [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" INNER JOIN "courses_locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "courses_locations"."course_id" = ? LIMIT ?[0m  [["course_id", 1], ["LIMIT", 11]]
   [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" INNER JOIN "courses_locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "courses_locations"."course_id" = ? LIMIT ?[0m  [["course_id", 1], ["LIMIT", 11]]
   [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mLocation Create (0.3ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["location", "14.10.31"], ["created_at", "2019-05-01 19:33:08.140221"], ["updated_at", "2019-05-01 19:33:08.140221"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["category", "asdf"], ["created_at", "2019-05-01 19:33:28.760069"], ["updated_at", "2019-05-01 19:33:28.760069"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "adf.wer@rmit.edu.au"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "asdf"], ["email", "adf.wer@rmit.edu.au"], ["created_at", "2019-05-01 19:34:12.430687"], ["updated_at", "2019-05-01 19:34:12.430687"], ["password_digest", "$2a$10$D1mOpYCJcsOEaP19cuNPxeRw83PO4ESqXoyeTFH4HPHviJ6E.q/Ta"]]
+  [1m[35m (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "adf.wer@rmit.edu.au"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "asdf"], ["email", "adf.wer@rmit.edu.au"], ["created_at", "2019-05-01 20:08:01.871381"], ["updated_at", "2019-05-01 20:08:01.871381"], ["password_digest", "$2a$10$c7Ki.oQINuggAWCYJ2gNQ.uHoU5Y6FhNj.TAV76a.c5qoy5qJs/Qi"]]
+  [1m[35m (105.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (0.6ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["location", "123.34.132"], ["created_at", "2019-05-01 20:08:18.204997"], ["updated_at", "2019-05-01 20:08:18.204997"]]
+  [1m[35m (96.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (1.4ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["category", "asdf"], ["created_at", "2019-05-01 20:08:35.205100"], ["updated_at", "2019-05-01 20:08:35.205100"]]
+  [1m[35m (86.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Create (1.6ms)[0m  [1m[32mINSERT INTO "courses" ("name", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "something"], ["user_id", 1], ["category_id", 1], ["created_at", "2019-05-01 20:09:30.271163"], ["updated_at", "2019-05-01 20:09:30.271163"]]
+  [1m[35m (111.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."category_id" = ? LIMIT ?[0m  [["category_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse::HABTM_Locations Create (1.0ms)[0m  [1m[32mINSERT INTO "courses_locations" ("course_id", "location_id") VALUES (?, ?)[0m  [["course_id", 1], ["location_id", 1]]
+  [1m[35m (100.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" INNER JOIN "courses_locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "courses_locations"."course_id" = ? LIMIT ?[0m  [["course_id", 1], ["LIMIT", 11]]
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" INNER JOIN "courses_locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "courses_locations"."course_id" = ? LIMIT ?[0m  [["course_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) AND "users"."id" != ? LIMIT ?[0m  [["email", "adf.wer@rmit.edu.au"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse Create (0.7ms)[0m  [1m[32mINSERT INTO "courses" ("name", "user_id", "category_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Course 2"], ["user_id", 1], ["category_id", 1], ["created_at", "2019-05-01 20:36:20.485965"], ["updated_at", "2019-05-01 20:36:20.485965"]]
+  [1m[35m (77.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."category_id" = ? LIMIT ?[0m  [["category_id", 1], ["LIMIT", 11]]
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCourse::HABTM_Locations Create (0.3ms)[0m  [1m[32mINSERT INTO "courses_locations" ("course_id", "location_id") VALUES (?, ?)[0m  [["course_id", 2], ["location_id", 1]]
+  [1m[35m (65.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" INNER JOIN "courses_locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "courses_locations"."course_id" = ? LIMIT ?[0m  [["course_id", 2], ["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "courses"[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
