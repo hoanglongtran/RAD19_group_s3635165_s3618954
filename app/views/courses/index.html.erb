@@ -3,7 +3,6 @@
 <h1>All courses</h1>
 
 <div>
-
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#courseTab">Courses</a></li>
     <li><a data-toggle="tab" href="#coordinatorTab">Coordinators</a></li>
@@ -19,7 +18,7 @@
 	    <section class="course_info">
 	      <h1>
 		<%= gravatar_course @user %>
-		<%= course.user.name %>
+		<%= course.user %>
 	      </h1>
 	    </section>
 	  </aside>
@@ -29,7 +28,9 @@
  	</h1>
 	<h2>
 	  <%= course.category.category %> 
-          <%= course.locations %> 
+          <% course.locations.each do |location|  %>
+            <%= location.location %>
+          <% end %>
           <%= course.created_at %>
 	</h2>
     </div>
@@ -56,7 +57,7 @@
 
 </div>
 
-<<<<<<< HEAD
+
 
 <%# <h1>
       <%= link_to course.name, course %>
@@ -70,5 +71,4 @@
     <h2>
       <%# course.created_at %>
 </div>
-=======
->>>>>>> 6cc13f9de4b423c15cf9c387a8f550f915d0509a
+
