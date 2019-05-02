@@ -20,9 +20,9 @@
               Locations <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "14.10.31", '#' %></li>
-	      <li><%= link_to "14.08.26", '#' %></li>
-	      <li><%= link_to "14.10.30", '#' %></li>
+              <li><%= link_to "14.10.31", courses_path(:location =>"14.10.31") %></li>
+	      <li><%= link_to "14.08.26", courses_path(:location =>"14.08.26") %></li>
+	      <li><%= link_to "14.10.30", courses_path(:location =>"14.10.30") %></li>
             </ul>
           </li>
         <% if logged_in? %>

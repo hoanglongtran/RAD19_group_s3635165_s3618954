@@ -12,6 +12,11 @@ class CoursesController < ApplicationController
     if params[:category]
       sth = Category.find_by(:category => params[:category])
       @courses = Course.where(:category_id => sth)
+    elsif params[:location]
+      sth = Location.find_by(:location => params[:location])
+      #a = Course.joins(:courses_locations).where
+      @courses = Course.includes(:locations).where(locations: { id: sth }) 
+     # @courses = Course.where(:course_id => a)
     else
       @courses = Course.all
     end
