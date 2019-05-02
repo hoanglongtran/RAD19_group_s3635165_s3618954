@@ -10151,6 +10151,7 @@ Processing by CoursesController#index as HTML
 Completed 500 Internal Server Error in 78ms (ActiveRecord: 2.3ms)
 
 
+<<<<<<< HEAD
   
 ActionView::Template::Error (undefined method `name' for nil:NilClass):
     19: 	    <section class="course_info">
@@ -10163,3 +10164,948 @@ ActionView::Template::Error (undefined method `name' for nil:NilClass):
   
 app/views/courses/index.html.erb:22:in `block in _app_views_courses_index_html_erb___3557446729305561234_47294262152160'
 app/views/courses/index.html.erb:15:in `_app_views_courses_index_html_erb___3557446729305561234_47294262152160'
+=======
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:16:25 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (27.4ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:29: syntax error, unexpected tCONSTANT, expecting ')'
+t_buffer.append=( link_to "New Course", '#' );@output_buffer
+                              ^
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+          <li class="dropdown">
+                             ^
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:32: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+_buffer.safe_append=' <b class="caret"></b>
+                              ^
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:32: syntax error, unexpected '<'
+fe_append=' <b class="caret"></b>
+                              ^
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:33: unknown regexp option - a
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:34: syntax error, unexpected '<'
+            <ul class="dropdown-menu">
+             ^
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:35: syntax error, unexpected '<'
+              <li>'.freeze;@output_buffer.app
+               ^
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:36: unknown regexp option - l
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:37: syntax error, unexpected '<'
+              <li class="divider"></li>
+               ^
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:37: syntax error, unexpected '<'
+         <li class="divider"></li>
+                              ^
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:40: unknown regexp option - l
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:41: syntax error, unexpected '<'
+            </ul>
+             ^
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:42: unknown regexp option - l
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:46: unknown regexp option - l
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:47: syntax error, unexpected '<'
+    </nav>
+     ^
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:48: unknown regexp options - dv
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:49: syntax error, unexpected '<'
+</header>
+ ^
+/home/arbre/RubyProjects/RAD_Assignment/app/views/layouts/_header.html.erb:49: unterminated regexp meets end of file):
+  
+app/views/layouts/_header.html.erb:29: syntax error, unexpected tCONSTANT, expecting ')'
+app/views/layouts/_header.html.erb:30: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/_header.html.erb:32: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/layouts/_header.html.erb:32: syntax error, unexpected '<'
+app/views/layouts/_header.html.erb:33: unknown regexp option - a
+app/views/layouts/_header.html.erb:34: syntax error, unexpected '<'
+app/views/layouts/_header.html.erb:35: syntax error, unexpected '<'
+app/views/layouts/_header.html.erb:36: unknown regexp option - l
+app/views/layouts/_header.html.erb:37: syntax error, unexpected '<'
+app/views/layouts/_header.html.erb:37: syntax error, unexpected '<'
+app/views/layouts/_header.html.erb:40: unknown regexp option - l
+app/views/layouts/_header.html.erb:41: syntax error, unexpected '<'
+app/views/layouts/_header.html.erb:42: unknown regexp option - l
+app/views/layouts/_header.html.erb:46: unknown regexp option - l
+app/views/layouts/_header.html.erb:47: syntax error, unexpected '<'
+app/views/layouts/_header.html.erb:48: unknown regexp options - dv
+app/views/layouts/_header.html.erb:49: syntax error, unexpected '<'
+app/views/layouts/_header.html.erb:49: unterminated regexp meets end of file
+app/views/layouts/application.html.erb:12:in `_app_views_layouts_application_html_erb___1213614387401248404_70082834965180'
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:17:06 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (32.6ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 71ms (Views: 61.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:22:37 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (30.0ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 73ms (Views: 63.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/courses?category=Web+Development" for 127.0.0.1 at 2019-05-02 19:22:42 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"category"=>"Web Development"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."category" = ? LIMIT ?[0m  [["category", "Web Development"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (272.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (277.9ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 328ms (Views: 53.3ms | ActiveRecord: 272.9ms)
+
+
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 19:22:57 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (39.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."location_id" = ?[0m  [["location_id", 2]]
+  ↳ app/views/courses/index.html.erb:14
+  Rendered courses/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 41.1ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: courses.location_id: SELECT "courses".* FROM "courses" WHERE "courses"."location_id" = ?):
+    11: <div class="tab-content">
+    12:   <div id="courseTab" class="tab-pane fade in active">
+    13: <ul class="courses">
+    14:   <% @courses.each do |course| %>
+    15:     
+    16:     <div class="row">
+    17: 	  <aside class="col-md-4">
+  
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082938504200'
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 19:34:39 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."course_id" IN (SELECT "courses"."id" FROM "courses" WHERE "courses"."course_id" = ?)[0m  [["course_id", 2]]
+  ↳ app/views/courses/index.html.erb:14
+  Rendered courses/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: courses.course_id: SELECT "courses".* FROM "courses" WHERE "courses"."course_id" IN (SELECT "courses"."id" FROM "courses" WHERE "courses"."course_id" = ?)):
+    11: <div class="tab-content">
+    12:   <div id="courseTab" class="tab-pane fade in active">
+    13: <ul class="courses">
+    14:   <% @courses.each do |course| %>
+    15:     
+    16:     <div class="row">
+    17: 	  <aside class="col-md-4">
+  
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082903833640'
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 19:34:41 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."course_id" IN (SELECT "courses"."id" FROM "courses" WHERE "courses"."course_id" = ?)[0m  [["course_id", 2]]
+  ↳ app/views/courses/index.html.erb:14
+  Rendered courses/index.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: courses.course_id: SELECT "courses".* FROM "courses" WHERE "courses"."course_id" IN (SELECT "courses"."id" FROM "courses" WHERE "courses"."course_id" = ?)):
+    11: <div class="tab-content">
+    12:   <div id="courseTab" class="tab-pane fade in active">
+    13: <ul class="courses">
+    14:   <% @courses.each do |course| %>
+    15:     
+    16:     <div class="row">
+    17: 	  <aside class="col-md-4">
+  
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082871698720'
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 19:36:03 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+
+  
+NameError (uninitialized constant CoursesController::Course_Location):
+  
+app/controllers/courses_controller.rb:17:in `index'
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 19:45:05 +1000
+  
+SyntaxError (/home/arbre/RubyProjects/RAD_Assignment/app/controllers/courses_controller.rb:17: syntax error, unexpected ')', expecting keyword_end
+cations.location_id => 'sth'")
+                              ^):
+  
+app/controllers/courses_controller.rb:17: syntax error, unexpected ')', expecting keyword_end
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 19:58:52 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT * FROM courses INNER JOIN courses_locations
+      INNER JOIN locations ON locations.location = sth[0m
+  ↳ app/controllers/courses_controller.rb:18
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: sth: SELECT * FROM courses INNER JOIN courses_locations
+      INNER JOIN locations ON locations.location = sth):
+  
+app/controllers/courses_controller.rb:18:in `index'
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 20:00:37 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."location" = ?[0m  [["location", "14.10.31"]]
+  ↳ app/views/courses/index.html.erb:14
+  Rendered courses/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: courses.location: SELECT "courses".* FROM "courses" WHERE "courses"."location" = ?):
+    11: <div class="tab-content">
+    12:   <div id="courseTab" class="tab-pane fade in active">
+    13: <ul class="courses">
+    14:   <% @courses.each do |course| %>
+    15:     
+    16:     <div class="row">
+    17: 	  <aside class="col-md-4">
+  
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082939822900'
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 20:02:57 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (15.6ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (82.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 130ms (Views: 94.9ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 20:04:42 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."location" = ?[0m  [["location", 2]]
+  ↳ app/views/courses/index.html.erb:14
+  Rendered courses/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: courses.location: SELECT "courses".* FROM "courses" WHERE "courses"."location" = ?):
+    11: <div class="tab-content">
+    12:   <div id="courseTab" class="tab-pane fade in active">
+    13: <ul class="courses">
+    14:   <% @courses.each do |course| %>
+    15:     
+    16:     <div class="row">
+    17: 	  <aside class="col-md-4">
+  
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082929280000'
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 20:05:50 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (33.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 82ms (Views: 64.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 20:05:54 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (1.0ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (8.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 43ms (Views: 37.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/courses?location=14.08.26" for 127.0.0.1 at 2019-05-02 20:05:57 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.08.26"}
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.08.26"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 50ms (Views: 48.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses?location=14.10.30" for 127.0.0.1 at 2019-05-02 20:05:59 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.30"}
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.30"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (0.7ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (19.1ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 61ms (Views: 54.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 20:06:00 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (0.7ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_shim.html.erb (0.9ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 58ms (Views: 52.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/courses?location=14.08.26" for 127.0.0.1 at 2019-05-02 20:06:09 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.08.26"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.08.26"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" = ?[0m  [["id", 1]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses?location=14.08.26" for 127.0.0.1 at 2019-05-02 20:06:30 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.08.26"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.08.26"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (0.2ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" IS NULL[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 57ms (Views: 39.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/courses?location=14.10.30" for 127.0.0.1 at 2019-05-02 20:06:33 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.30"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.30"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (0.5ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" IS NULL[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 49ms (Views: 43.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/courses?location=14.08.26" for 127.0.0.1 at 2019-05-02 20:06:35 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.08.26"}
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.08.26"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (0.7ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" IS NULL[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 55ms (Views: 49.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 20:06:37 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (0.6ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (26.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 75ms (Views: 60.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/courses?category=Java" for 127.0.0.1 at 2019-05-02 20:07:11 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"category"=>"Java"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."category" = ? LIMIT ?[0m  [["category", "Java"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."category_id" IS NULL[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 53ms (Views: 36.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/courses?category=Web+Development" for 127.0.0.1 at 2019-05-02 20:07:13 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"category"=>"Web Development"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."category" = ? LIMIT ?[0m  [["category", "Web Development"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (18.4ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 55ms (Views: 48.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/courses?category=Full+Stack+Dev" for 127.0.0.1 at 2019-05-02 20:07:14 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"category"=>"Full Stack Dev"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."category" = ? LIMIT ?[0m  [["category", "Full Stack Dev"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."category_id" IS NULL[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 53ms (Views: 48.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses?category=Web+Development" for 127.0.0.1 at 2019-05-02 20:07:16 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"category"=>"Web Development"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."category" = ? LIMIT ?[0m  [["category", "Web Development"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 48ms (Views: 43.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:07:19 +1000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 65ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 20:07:20 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (15.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 54ms (Views: 50.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/courses?location=14.10.30" for 127.0.0.1 at 2019-05-02 20:08:23 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.30"}
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.30"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" IS NULL[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 67ms (Views: 62.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/courses?location=14.10.31" for 127.0.0.1 at 2019-05-02 20:08:25 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"location"=>"14.10.31"}
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT  "locations".* FROM "locations" WHERE "locations"."location" = ? LIMIT ?[0m  [["location", "14.10.31"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:16
+  Rendering courses/index.html.erb within layouts/application
+  [1m[35mSQL (0.6ms)[0m  [1m[34mSELECT "courses"."id" AS t0_r0, "courses"."name" AS t0_r1, "courses"."user_id" AS t0_r2, "courses"."category_id" AS t0_r3, "courses"."created_at" AS t0_r4, "courses"."updated_at" AS t0_r5, "locations"."id" AS t1_r0, "locations"."location" AS t1_r1, "locations"."created_at" AS t1_r2, "locations"."updated_at" AS t1_r3 FROM "courses" LEFT OUTER JOIN "courses_locations" ON "courses_locations"."course_id" = "courses"."id" LEFT OUTER JOIN "locations" ON "locations"."id" = "courses_locations"."location_id" WHERE "locations"."id" = ?[0m  [["id", 2]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (9.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 60ms (Views: 46.9ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (43.8ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["location", "14.08.26"], ["created_at", "2019-05-02 10:08:36.144515"], ["updated_at", "2019-05-02 10:08:36.144515"]]
+  [1m[35m (91.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLocation Create (0.5ms)[0m  [1m[32mINSERT INTO "locations" ("location", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["location", "14.10.30"], ["created_at", "2019-05-02 10:08:43.267565"], ["updated_at", "2019-05-02 10:08:43.267565"]]
+  [1m[35m (83.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["category", "Java"], ["created_at", "2019-05-02 10:09:37.387253"], ["updated_at", "2019-05-02 10:09:37.387253"]]
+  [1m[35m (97.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.5ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["category", "Full Stack Dev"], ["created_at", "2019-05-02 10:10:02.198230"], ["updated_at", "2019-05-02 10:10:02.198230"]]
+  [1m[35m (89.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCategory Create (0.2ms)[0m  [1m[32mINSERT INTO "categories" ("category", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["category", "iOS Development"], ["created_at", "2019-05-02 10:10:09.303647"], ["updated_at", "2019-05-02 10:10:09.303647"]]
+  [1m[35m (74.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 20:20:45 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (7.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 37.8ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 20:21:09 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (37.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 74ms (Views: 65.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 20:21:14 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 20:21:35 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:21:37 +1000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 42ms (Views: 38.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 20:21:39 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (6.7ms)
+  Rendered layouts/_shim.html.erb (0.9ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses?category=Java" for 127.0.0.1 at 2019-05-02 20:21:45 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"category"=>"Java"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."category" = ? LIMIT ?[0m  [["category", "Java"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 48ms (Views: 43.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:21:47 +1000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses?category=Web+Development" for 127.0.0.1 at 2019-05-02 20:23:45 +1000
+Processing by CoursesController#index as HTML
+  Parameters: {"category"=>"Web Development"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."category" = ? LIMIT ?[0m  [["category", "Web Development"], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-05-02 20:23:47 +1000
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 20:23:49 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (15.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 80ms (Views: 75.8ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asd@rmit.edu.au"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asd@rmit.edu.au"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asdsadsad@rmit.edu.au"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asdsadsad@rmit.edu.au"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asdsa.dsad@rmit.edu.au"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Spongebob Squarepants"], ["email", "asdsa.dsad@rmit.edu.au"], ["created_at", "2019-05-02 10:35:11.392543"], ["updated_at", "2019-05-02 10:35:11.392543"], ["password_digest", "$2a$10$x8g2oKPo4zeMX6PQm/xm4uSaygxmQA..n.XQRXOGHMbTqi39qd00i"]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+>>>>>>> e6a956de9d6f80fadb694ff483595a8973c2fa89
