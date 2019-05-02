@@ -8,6 +8,11 @@ class CoursesController < ApplicationController
   end
 
   def index
-    @courses = Course.all
+    if params[:category]
+      sth = Category.find_by(:category => params[:category])
+      @courses = Course.where(:category_id => sth)
+    else
+      @courses = Course.all
+    end
   end
 end
