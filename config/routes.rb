@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'courses/new'
+
   get 'sessions/new'
   get 'users/new'
   root 'static_pages#home'

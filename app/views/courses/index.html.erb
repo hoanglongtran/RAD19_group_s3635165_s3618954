@@ -2,7 +2,15 @@
 <div>
 <h1>All courses</h1>
 
+<div>
 
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#courseTab">Courses</a></li>
+    <li><a data-toggle="tab" href="#coordinatorTab">Coordinators</a></li>
+  </ul>
+
+<div class="tab-content">
+  <div id="courseTab" class="tab-pane fade in active">
 <ul class="courses">
   <% @courses.each do |course| %>
     
@@ -10,26 +18,45 @@
 	  <aside class="col-md-4">
 	    <section class="course_info">
 	      <h1>
-		<%= gravatar_course @course %>
-		<%= @course %>
+		<%= gravatar_course @user %>
+		<%= course.user %>
 	      </h1>
 	    </section>
 	  </aside>
 
 	<h1>         
-	<%= course.name %>
+	  <%= course.name %>
  	</h1>
 	<h2>
-	  <%= course.category %>
-          <%= course.locations %>
+	  <%= course.category.category %> 
+          <%= course.locations %> 
           <%= course.created_at %>
 	</h2>
     </div>
 
   <% end %>
 </ul>
+  </div>
 
+  <div id="coordinatorTab" class="tab-pane fade">
+      <ul class="coordinators">
+        <% @users.each do |user| %>
+	  <div class="row">
+	    <section class="user_info">
+	      <h1>
+		<%= gravatar_course @user %>
+		<%= user.name %>
+	      </h1>
+	    </section>
+	  </div>
+        <% end %>
+      </ul>
+  </div>
+</div>
 
+</div>
+
+<<<<<<< HEAD
 
 <%# <h1>
       <%= link_to course.name, course %>
@@ -43,3 +70,5 @@
     <h2>
       <%# course.created_at %>
 </div>
+=======
+>>>>>>> 6cc13f9de4b423c15cf9c387a8f550f915d0509a
