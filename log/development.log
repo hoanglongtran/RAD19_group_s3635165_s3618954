@@ -9734,3 +9734,292 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 95ms (Views: 79.0ms | ActiveRecord: 2.8ms)
 
 
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:00:29 +1000
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/arbre/.rvm/gems/ruby-2.4.5/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (1.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (248.5ms)
+  Rendered layouts/_shim.html.erb (0.6ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 3526ms (Views: 3363.5ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:03:15 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  Rendered courses/index.html.erb within layouts/application (97.8ms)
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for nil:NilClass):
+    18: 	    <section class="course_info">
+    19: 	      <h1>
+    20: 		<%= gravatar_course @course %>
+    21: 		<%= @course.user.name %>
+    22: 	      </h1>
+    23: 	    </section>
+    24: 	  </aside>
+  
+app/views/courses/index.html.erb:21:in `block in _app_views_courses_index_html_erb__3490602830549366090_70082727409360'
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082727409360'
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:05:00 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  Rendered courses/index.html.erb within layouts/application (40.7ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    18: 	    <section class="course_info">
+    19: 	      <h1>
+    20: 		<%= gravatar_course @course %>
+    21: 		<%= course.user.name %>
+    22: 	      </h1>
+    23: 	    </section>
+    24: 	  </aside>
+  
+app/views/courses/index.html.erb:21:in `block in _app_views_courses_index_html_erb__3490602830549366090_70082905255580'
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082905255580'
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:05:02 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  Rendered courses/index.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    18: 	    <section class="course_info">
+    19: 	      <h1>
+    20: 		<%= gravatar_course @course %>
+    21: 		<%= course.user.name %>
+    22: 	      </h1>
+    23: 	    </section>
+    24: 	  </aside>
+  
+app/views/courses/index.html.erb:21:in `block in _app_views_courses_index_html_erb__3490602830549366090_70082728560640'
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082728560640'
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:05:43 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  Rendered courses/index.html.erb within layouts/application (28.2ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    18: 	    <section class="course_info">
+    19: 	      <h1>
+    20: 		<%= gravatar_course @course %>
+    21: 		<%= course.user.name %>
+    22: 	      </h1>
+    23: 	    </section>
+    24: 	  </aside>
+  
+app/views/courses/index.html.erb:21:in `block in _app_views_courses_index_html_erb__3490602830549366090_70082764338540'
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082764338540'
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:08:00 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  Rendered courses/index.html.erb within layouts/application (31.3ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    18: 	    <section class="course_info">
+    19: 	      <h1>
+    20: 		<%= gravatar_course @user %>
+    21: 		<%= course.user.name %>
+    22: 	      </h1>
+    23: 	    </section>
+    24: 	  </aside>
+  
+app/views/courses/index.html.erb:21:in `block in _app_views_courses_index_html_erb__3490602830549366090_70082871591220'
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082871591220'
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:09:58 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/arbre/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/arbre/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/arbre/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/arbre/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/arbre/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/arbre/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/arbre/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:6
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ /home/arbre/.rvm/rubies/ruby-2.4.5/lib/ruby/gems/2.4.0/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:6
+  Rendered courses/index.html.erb within layouts/application (295.8ms)
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `courses' for #<#<Class:0x00007f7ad48bd688>:0x000055f1fc410278>
+Did you mean?  course
+               @courses):
+    18: 	    <section class="course_info">
+    19: 	      <h1>
+    20: 		<%= gravatar_course @user %>
+    21: 		<%= courses.user.name %>
+    22: 	      </h1>
+    23: 	    </section>
+    24: 	  </aside>
+  
+app/views/courses/index.html.erb:21:in `block in _app_views_courses_index_html_erb__3490602830549366090_47248903801520'
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_47248903801520'
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:11:54 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  Rendered courses/index.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `users' for nil:NilClass):
+    18: 	    <section class="course_info">
+    19: 	      <h1>
+    20: 		<%= gravatar_course @user %>
+    21: 		<%= @course.users.name %>
+    22: 	      </h1>
+    23: 	    </section>
+    24: 	  </aside>
+  
+app/views/courses/index.html.erb:21:in `block in _app_views_courses_index_html_erb__3490602830549366090_70082902821160'
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082902821160'
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:12:13 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  Rendered courses/index.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `users' for nil:NilClass):
+    18: 	    <section class="course_info">
+    19: 	      <h1>
+    20: 		<%= gravatar_course @user %>
+    21: 		<%= @course.users %>
+    22: 	      </h1>
+    23: 	    </section>
+    24: 	  </aside>
+  
+app/views/courses/index.html.erb:21:in `block in _app_views_courses_index_html_erb__3490602830549366090_70082762176280'
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082762176280'
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:12:20 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  Rendered courses/index.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `user' for nil:NilClass):
+    18: 	    <section class="course_info">
+    19: 	      <h1>
+    20: 		<%= gravatar_course @user %>
+    21: 		<%= @course.user %>
+    22: 	      </h1>
+    23: 	    </section>
+    24: 	  </aside>
+  
+app/views/courses/index.html.erb:21:in `block in _app_views_courses_index_html_erb__3490602830549366090_70082625549460'
+app/views/courses/index.html.erb:14:in `_app_views_courses_index_html_erb__3490602830549366090_70082625549460'
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 19:12:31 +1000
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:14
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:21
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:30
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/courses/index.html.erb:42
+  Rendered courses/index.html.erb within layouts/application (12.7ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 92ms (Views: 88.6ms | ActiveRecord: 1.1ms)
+
+

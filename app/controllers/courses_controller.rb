@@ -12,9 +12,6 @@ class CoursesController < ApplicationController
     if params[:category]
       sth = Category.find_by(:category => params[:category])
       @courses = Course.where(:category_id => sth)
-#    elsif params[:locations]
-#      sth = Location.find_by(:location => params[:location])
-#      @courses = Course.where(:location_id => sth)
     else
       @courses = Course.all
     end
