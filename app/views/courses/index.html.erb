@@ -18,7 +18,7 @@
 	    <section class="course_info">
 	      <h1>
 		<%= gravatar_course @course %>
-		<%= @course %>
+		<%= course.user %>
 	      </h1>
 	    </section>
 	  </aside>
@@ -38,8 +38,18 @@
   </div>
 
   <div id="coordinatorTab" class="tab-pane fade">
-      <h3>Menu 1</h3>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <ul class="coordinators">
+        <% @users.each do |user| %>
+	  <div class="row">
+	    <section class="user_info">
+	      <h1>
+		<%= gravatar_course @user %>
+		<%= user.name %>
+	      </h1>
+	    </section>
+	  </div>
+        <% end %>
+      </ul>
   </div>
 </div>
 

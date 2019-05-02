@@ -1,3 +1,4 @@
+
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <%= link_to "your course", root_path, id: "logo" %>
@@ -9,9 +10,9 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Web Development", courses_path(:category =>"Web Development") %></li>
-              <li><%= link_to "Java", courses_path(:category =>"asdf") %></li>
-	      <li><%= link_to "Full Stack Dev", '#' %></li>
-	      <li><%= link_to "iOS Development", '#' %></li>
+              <li><%= link_to "Java", courses_path(:category =>"Java") %></li>
+	      <li><%= link_to "Full Stack Dev", courses_path(:category =>"Full Stack Dev") %></li>
+	      <li><%= link_to "iOS Development", courses_path(:category =>"iOS Development") %></li>
             </ul>
           </li>
         <li class="dropdown">
