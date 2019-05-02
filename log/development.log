@@ -10132,3 +10132,34 @@ ActionView::Template::Error (undefined method `name' for nil:NilClass):
   
 app/views/courses/index.html.erb:22:in `block in _app_views_courses_index_html_erb___3557446729305561234_47294260739880'
 app/views/courses/index.html.erb:15:in `_app_views_courses_index_html_erb___3557446729305561234_47294260739880'
+Started GET "/courses" for 127.0.0.1 at 2019-05-02 20:54:05 +1000
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:22
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:31
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:22
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:31
+  Rendered courses/index.html.erb within layouts/application (58.2ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    19: 	    <section class="course_info">
+    20: 	      <h1>
+    21: 		<%= gravatar_course @user %>
+    22: 		<%= course.user.name %>
+    23: 	      </h1>
+    24: 	    </section>
+    25: 	  </aside>
+  
+app/views/courses/index.html.erb:22:in `block in _app_views_courses_index_html_erb___3557446729305561234_47294262152160'
+app/views/courses/index.html.erb:15:in `_app_views_courses_index_html_erb___3557446729305561234_47294262152160'
