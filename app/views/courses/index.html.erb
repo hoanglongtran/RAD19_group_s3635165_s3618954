@@ -14,15 +14,15 @@
   <% @courses.each do |course| %>
     
     <div class="row">
-	  <aside class="col-md-4">
-	    <section class="course_info">
-	      <h1>
-		<%= gravatar_course @user %>
-		<%= course.user %>
-	      </h1>
-	    </section>
-	  </aside>
-
+	  <div class="col-md-2">
+	    
+	      <h4>
+		<%= gravatar_course course.user %>
+		Coordinator:  <%= link_to course.user.name, course.user %>
+	      </h4>
+	    
+	  </div>
+          <div class="col-md-6">
 	<h1>         
 	  <%= course.name %>
  	</h1>
@@ -33,6 +33,7 @@
           <% end %>
           <%= course.created_at %>
 	</h2>
+          </div>
     </div>
 
   <% end %>
