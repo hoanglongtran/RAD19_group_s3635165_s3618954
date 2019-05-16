@@ -18,7 +18,9 @@
 	    <section class="course_info">
 	      <h1>
 		<%= gravatar_course @user %>
-		<%= course.user %>
+        <% unless course.user_id.nil? %>
+		    <%= course.user.name %>
+        <% end %>
 	      </h1>
 	    </section>
 	  </aside>
