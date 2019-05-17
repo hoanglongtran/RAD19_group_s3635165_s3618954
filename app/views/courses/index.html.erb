@@ -27,11 +27,11 @@
 	  <%= course.name %>
  	</h1>
 	<h2>
-	  <%= course.category.category %> 
-          <% course.locations.each do |location|  %>
-            <%= location.location %>
+	Category: <%= link_to course.category.category, courses_path(:category => course.category.category) %>  
+</h2> <h2> Locations: <% course.locations.each do |location|  %>
+            <%= link_to location.location, courses_path(:location => location.location) %>
           <% end %>
-          <%= course.created_at %>
+   </h2> <h2> Creation Date: <%= course.created_at %>
 	</h2>
           </div>
     </div>
