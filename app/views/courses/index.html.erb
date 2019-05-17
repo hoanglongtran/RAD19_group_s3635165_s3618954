@@ -24,10 +24,10 @@
 	  </div>
           <div class="col-md-6">
 	<h1>         
-	  <%= course.name %>
+	  <%= link_to course.name, course %>
  	</h1>
 	<h2>
-	Category: <%= link_to course.category.category, courses_path(:category => course.category.category) %>  
+Category: <%= link_to course.category.category, courses_path(:category => course.category.category) %>  
 </h2> <h2> Locations: <% course.locations.each do |location|  %>
             <%= link_to location.location, courses_path(:location => location.location) %>
           <% end %>
@@ -47,7 +47,7 @@
 	    <section class="user_info">
 	      <h1>
 		<%= gravatar_course @user %>
-		<%= user.name %>
+		<%= link_to user.name, user %>
 	      </h1>
 	    </section>
 	  </div>
