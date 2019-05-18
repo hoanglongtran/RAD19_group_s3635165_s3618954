@@ -36,12 +36,13 @@
 
         
         <%= form_for course.votes.build, url: course_votes_path(course) do |f| %>
-          <% f.hidden_field :user_id, value: current_user %>
-          <% f.hidden_field :vote_type, value: 1 %>
-          <% f.submit 'Upvote', class: 'btn btn-default' %>
+          <%= f.hidden_field :user, value: current_user.id %>
+          <%= f.hidden_field :vote_type, value: 1 %>
+          <%= f.submit 'Upvote', class: 'btn btn-default' %>
         <% end %>
-    <h2> Score: <% course.score %> </h2>
-    <h2> Current User: <% current_user %> </h2>
+    <h2> Score: <%= course.score %> </h2>
+    <h2> Current User: current_user </h2>
+    
     <h2> Creation Date: <%= course.created_at %></h2>
           </div>
     </div>

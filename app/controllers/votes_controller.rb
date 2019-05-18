@@ -1,13 +1,17 @@
 class VotesController < ApplicationController
   def create
     @vote = Vote.new(secure_params)
-    @vote.course = Course.find(params[:course_id])
-    if @vote.save
-	respond_to do |format|
-		format.html { redirect_to @vote.post }
-		format.js
-	end
-    end 
+#    @vote.course = Course.find(params[:course_id])
+    @vote.save	
+#    if @vote.save
+#	respond_to do |format|
+#		format.html { redirect_to  }
+#		format.js
+#	end
+#    end
+
+  rescue ActiveRecord::RecordInvalid => invalid
+    return invalid.record.errors
   end
 
   def destroy
@@ -15,6 +19,6 @@ class VotesController < ApplicationController
 
   private
      def secure_params
-	params.permit(:course_id, :user, :vote_type)
+	params.permit( :user_id, :course_id, :vote_type )
      end
 end
