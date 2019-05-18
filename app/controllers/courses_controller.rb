@@ -24,4 +24,7 @@ class CoursesController < ApplicationController
     
 #    @user_name = @courses.user_id.name 
   end
+
+
+
 end
