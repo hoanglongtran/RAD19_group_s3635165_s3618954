@@ -5,6 +5,6 @@ class Course < ApplicationRecord
   has_many :votes, dependent: :destroy
 
   def score
-	votes.count
+	votes.sum(:vote_type)
   end
 end

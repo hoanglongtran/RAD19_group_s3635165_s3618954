@@ -1,6 +1,7 @@
 class VotesController < ApplicationController
   def create
     @vote = Vote.new(secure_params)
+#    @vote.user = User.find(:user_id)
     @vote.course = Course.find(params[:course_id])
     @vote.save	
 #    if @vote.save
@@ -19,6 +20,6 @@ class VotesController < ApplicationController
 
   private
      def secure_params
-	params.permit( :user_id, :course_id, :vote_type )
+	params.require(:vote).permit( :user_id, :vote_type )
      end
 end
