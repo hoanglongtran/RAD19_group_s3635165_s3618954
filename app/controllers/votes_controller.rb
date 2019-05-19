@@ -1,7 +1,7 @@
 class VotesController < ApplicationController
   def create
     @vote = Vote.new(secure_params)
-#    @vote.course = Course.find(params[:course_id])
+    @vote.course = Course.find(params[:course_id])
     @vote.save	
 #    if @vote.save
 #	respond_to do |format|

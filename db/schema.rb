@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_05_17_044349) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "prerequisite"
+    t.text "desc"
     t.index ["category_id"], name: "index_courses_on_category_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
@@ -37,11 +39,6 @@ ActiveRecord::Schema.define(version: 2019_05_17_044349) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "locations_courses", id: false, force: :cascade do |t|
-    t.integer "course_id"
-    t.integer "location_id"
   end
 
   create_table "users", force: :cascade do |t|
