@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   post '/login',   to: 'sessions#create'
   delete '/logout',to: 'sessions#destroy'
   resources :courses do
-	resources :votes, only: [:create, :destroy]
+	resources :votes, only: [:create, :destroy, :update]
   end
   resources :categories
   resources :locations
