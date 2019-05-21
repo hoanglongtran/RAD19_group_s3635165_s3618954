@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_17_034655) do
+ActiveRecord::Schema.define(version: 2019_05_17_044349) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category"
@@ -48,6 +48,16 @@ ActiveRecord::Schema.define(version: 2019_05_17_034655) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "vote_type"
+    t.index ["course_id"], name: "index_votes_on_course_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
   end
 
 end
