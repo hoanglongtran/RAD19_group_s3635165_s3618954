@@ -15,14 +15,13 @@ class VotesController < ApplicationController
   end
 
   def update
-	vote = Vote.find_by(user: current_user)
-
-	vote.update_attribute(:vote_type, update_vote_params)
+	vote = Vote.find_by(user: current_user, course: Course.find(params[:course_id]))
+	vote.update_attribute(:vote_type, update_vote_params[:vote_type])
 	redirect_to :courses
   end
 
   def destroy
-	vote = Vote.find_by(user: current_user)
+	vote = Vote.find_by(user: current_user, course: Course.find(params[:course_id]))
 	vote.destroy
     	redirect_to :courses, :notice => 'Unvoted!'
   end
