@@ -49,7 +49,11 @@
             <% end %>
         <% else %>
             <%= form_for course.votes.build, url: course_votes_path(course) do |f| %>
-              <%= f.hidden_field :user_id, value: current_user.id %>
+              <% if current_user.present? %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+              <% else %>
+                    <%= f.hidden_field :user_id, value: nil %> 
+              <% end %>
               <%= f.hidden_field :vote_type, value: 1 %>
               <%= f.submit 'Upvote', class: 'btn btn-default' %>
             <% end %>
@@ -70,12 +74,16 @@
         
         <% else %>
             <%= form_for course.votes.build, url: course_votes_path(course) do |f| %>
-              <%= f.hidden_field :user_id, value: current_user.id %>
+              <% if current_user.present? %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+              <% else %>
+                    <%= f.hidden_field :user_id, value: nil %> 
+              <% end %>
               <%= f.hidden_field :vote_type, value: -1 %>
               <%= f.submit 'Downvote', class: 'btn btn-default' %>
             <% end %>
         <% end %>
-    <h2> Current User: <%= current_user.id %> </h2>
+    
     
     <h2> Creation Date: <%= course.created_at %></h2>
 
