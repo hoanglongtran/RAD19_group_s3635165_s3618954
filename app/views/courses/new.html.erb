@@ -14,12 +14,31 @@
       <%= f.label :description %>
       <%= f.password_field :description, class: 'form-control' %>
 
-      <%= f.label :category, class: "checkbox inline" do %>
-      <% cats = ['A', 'B', 'C'] %>
-      <%  cats.each do |cat| %>
-      <%= f.check_box :cats, { multiple: true }, cat, false %>
-      <%= f.submit "Create course", class: "btn btn-primary" %>
+    <div class="field">
+      <%= f.label :category %>
+      <% Category.all.each do |category| %>
+        <%= category.category %>
+        <%= f.check_box :category_id %>
       <% end %>
+    </div>
+
+    <div class="field">
+      <% Location.all.each do |location| %>
+        <%= check_box_tag "product[location_ids][]", location.id %>
+        <%= location.location %>
+      <% end %>
+    </div>
+
+    <%= f.submit "Create new course", class: "btn btn-primary" %>
+
+    
+
+      <%#= f.label :category, class: "checkbox inline" do %>
+      <%# cats = ['A', 'B', 'C'] %>
+      <%#  cats.each do |cat| %>
+      <%#= f.check_box :cats, { multiple: true }, cat, false %>
+      <%#= f.submit "Create course", class: "btn btn-primary" %>
+      <%# end %>
         
     <% end %>
 
