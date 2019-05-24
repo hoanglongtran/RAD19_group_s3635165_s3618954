@@ -11,6 +11,8 @@ class CoursesController < ApplicationController
     @users = User.all
     if params[:category]
       sth = Category.find_by(:category => params[:category])
+      @courses = Course.where(:category_id => sth)
+
       @courses = Course.where(:category_id => sth.id)
     elsif params[:location]
       sth = Location.find_by(:location => params[:location])
@@ -20,6 +22,8 @@ class CoursesController < ApplicationController
     else
       @courses = Course.all
     end
+    
+#    @user_name = @courses.user_id.name 
   end
 
   def create
