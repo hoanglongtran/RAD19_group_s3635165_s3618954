@@ -1,10 +1,10 @@
 class CoursesController < ApplicationController
   def new
-    @courses = Course.new
+    @course = Course.new
   end
 
   def show
-    @courses = Course.find(params[:id])
+    @course = Course.find(params[:id])
   end
 
   def index
@@ -21,4 +21,38 @@ class CoursesController < ApplicationController
       @courses = Course.all
     end
   end
+
+  def create
+
+    @course = current_user.courses.build(course_params)
+
+    cat = @course.category
+    loc = @course.locations
+
+    cat.courses << @course
+
+    respond_to do |format|
+      if @course.save
+        format.html { redirect_to @course, notice: "Course successfully created!" }
+        format.json { render :show, status: :created, location: @course }
+      else
+        format.html { render :new }
+        format.json { render json: @course.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+#    if @course.save
+#      flash[:success] = "New course added!"
+#      redirect_to @course
+#    else
+#      render 'new'
+#    end
+#  end
+
+  private
+    def course_params
+      params.require(:course).permit(:name, :prerequisite, :desc, :category_id, :location_ids => [])
+    end
+
 end
