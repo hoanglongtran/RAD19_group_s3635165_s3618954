@@ -6,6 +6,6 @@ class Course < ApplicationRecord
   validates :name,  presence: true, length: { maximum: 100 },
                     uniqueness: { case_sensitive: false }
   validates :prerequisite,  presence: true
-  validates :desc,  presence: true, length: { maximum: 200 }
+  validates :description,  presence: true, length: { maximum: 200 }
   validates :category_id,  presence: true
 end

@@ -26,11 +26,6 @@ class CoursesController < ApplicationController
 
     @course = current_user.courses.build(course_params)
 
-    cat = @course.category
-    loc = @course.locations
-
-    cat.courses << @course
-
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: "Course successfully created!" }
@@ -52,7 +47,7 @@ class CoursesController < ApplicationController
 
   private
     def course_params
-      params.require(:course).permit(:name, :prerequisite, :desc, :category_id, :location_ids => [])
+      params.require(:course).permit(:name, :prerequisite, :description, :category_id, :location_ids => [])
     end
 
 end
