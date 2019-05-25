@@ -1,7 +1,20 @@
 
 <% provide(:title, 'Contact') %>
-<h1>Contact</h1>
-<p>
-  Contact the Ruby on Rails Tutorial about the sample app at the
-  <a href="https://www.railstutorial.org/contact">contact page</a>.
-</p>
+<h1>Contact Us</h1>
+<div>
+    <p>Please fill this up to contact the staffs.</p>
+</div>
+
+<nav>
+    <form>
+        <input type="text" placeholder="Name" aria-label="Name">
+    </form>
+
+     <form>
+        <input type="text" placeholder="Email" aria-label="Email">
+    </form>
+         <form>
+        <textarea placeholder="Messages" aria-label="Messages"></textarea>
+    </form>
+    <button class="btn btn-sm btn-outline-black my-0">Send</button>
+</nav>

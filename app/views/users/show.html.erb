@@ -9,3 +9,28 @@
     </section>
   </aside>
 </div>
+<ul class="courses">
+  <% @courses.each do |course| %>
+    
+          <div class="col-md-6">
+	<h1>         
+	  <%= link_to course.name, course %>
+ 	</h1>
+
+	<h2>Category: <%= link_to course.category.category, courses_path(:category => course.category.category) %>  </h2> 
+
+    <h2> Locations: <% course.locations.each do |location|  %>
+            <%= link_to location.location, courses_path(:location => location.location) %>
+          <% end %>
+    </h2> 
+            
+    <h2> Score: <%= course.score %> </h2>
+       
+    <h2> Creation Date: <%= course.created_at %></h2>
+
+          </div>
+    </div>
+
+  <% end %>
+</ul>
+  </div>

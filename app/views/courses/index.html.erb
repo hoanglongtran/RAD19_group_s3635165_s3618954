@@ -22,6 +22,7 @@
 	      </h4>
 	    
 	  </div>
+	
           <div class="col-md-6">
 	<h1>         
 	  <%= link_to course.name, course %>
@@ -34,7 +35,8 @@
             <%= link_to location.location, courses_path(:location => location.location) %>
           <% end %>
     </h2> 
-        
+
+    <h2> Creation Date: <%= course.created_at %></h2>
 
         <% if  Vote.exists?(user: current_user, course: course) && Vote.find_by(user: current_user).vote_type.equal?(-1) %>
             
@@ -85,16 +87,7 @@
         <% end %>
     
     
-    <h2> Creation Date: <%= course.created_at %></h2>
 
-	<h2>
-          Category: <%= link_to course.category.category, courses_path(:category => course.category.category) %>  
-</h2> 
-    <h2> Locations: <% course.locations.each do |location|  %>
-            <%= link_to location.location, courses_path(:location => location.location) %>
-          <% end %>
-   </h2> <h2> Creation Date: <%= course.created_at %>
-	</h2>
 
           </div>
     </div>
