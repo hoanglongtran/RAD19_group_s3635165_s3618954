@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+This is the email where the feedbacks are sent to:
+email:    rad.admin@protonmail.com
+password: rad_assignment2019
