@@ -4,16 +4,20 @@ def new
   end
 
   def create
-    @contact = Contact.new(params[:contact])
+    @contact = Contact.new(feedback_params)
     
     if @contact.save
-      ContactsMailer.general_message(@contact).deliver
-      render :thanks
+      ContactsMailer.send_feedback(@contact).deliver
+      redirect_to :courses
     else
       render :new
     end
   end
-  
-  def thanks
+
+def thanks
+  end
+ private 
+  def feedback_params
+	params.require(:contact).permit(:name, :email, :message)
   end
 end
