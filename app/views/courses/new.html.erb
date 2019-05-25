@@ -3,23 +3,41 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@courses) do |f| %>
+    <%= form_for(@course) do |f| %>
+      <%= render 'shared/course_error_messages' %>
 
       <%= f.label :name %>
-      <%= f.email_field :name, class: 'form-control' %>
+      <%= f.text_field :name, class: 'form-control' %>
 
       <%= f.label :prerequisite %>
-      <%= f.password_field :prerequisite, class: 'form-control' %>
+      <%= f.text_field :prerequisite, class: 'form-control' %>
 
       <%= f.label :description %>
-      <%= f.password_field :description, class: 'form-control' %>
+      <%= f.text_field :description, class: 'form-control' %>
 
-      <%= f.label :category, class: "checkbox inline" do %>
-      <% cats = ['A', 'B', 'C'] %>
-      <%  cats.each do |cat| %>
-      <%= f.check_box :cats, { multiple: true }, cat, false %>
-      <%= f.submit "Create course", class: "btn btn-primary" %>
+    <div class="field">
+      <%= f.label :category %>
+      <% (Category.all).each do |cat| %>
+        <div class="category">
+          <%= cat.category %>
+          <%= f.radio_button :category_id, cat.id %>
+        </div>
       <% end %>
+    </div>
+
+    <div class="field">
+      <%= f.label :location %>
+      <%= f.collection_check_boxes :location_ids, Location.all, :id, :location do |b| %>
+        <div class="collection-check-box">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
+    </div>
+
+    <% hidden_field_tag :user, current_user %>
+
+    <%= f.submit "Create new course", class: "btn btn-primary" %>
         
     <% end %>
 

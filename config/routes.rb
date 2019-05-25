@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'vote/destroy'
   get 'locations/new'
   get 'courses/new'
+  post 'courses/new'
   get 'categories/new'
   get 'sessions/new'
   get 'users/new'

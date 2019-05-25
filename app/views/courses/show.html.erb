@@ -1,16 +1,16 @@
-<% provide(:title, @courses.name) %>
+<% provide(:title, @course.name) %>
 
-<h1> <%= @courses.name %></h1>
+<h1> <%= @course.name %></h1>
 
 <div class = "row">
 <div class = "col-md-8">
-<h3> Prerequisite: <%= @courses.prerequisite %> </h3>
-<h4> Category: <%= link_to @courses.category.category, courses_path(:category => @courses.category.category) %> </h4>
-<h4> Location: <% @courses.locations.each do |location| %>
-               <%= link_to location.location, courses_path(:location => location.location) %>
+<h3> Prerequisite: <%= @course.prerequisite %> </h3>
+<h4> Category: <%= link_to @course.category.category, course_path(:category => @course.category.category) %> </h4>
+<h4> Location: <% @course.locations.each do |location| %>
+               <%= link_to location.location, course_path(:location => location.location) %>
                <% end %> </h4>
 <h4> Course Description: </h4>
-<h5> <%= @courses.desc %> </h5>
+<h5> <%= @course.description %> </h5>
 </div>
 
 <div class = "col-md-2">
@@ -18,7 +18,7 @@
 <h4> <%= gravatar_course @user %> </h4>
 </div>
 <div class = "row">
-<h4> Coordinator: <%= link_to @courses.user.name, @courses.user %> </h4>
+<h4> Coordinator: <%= link_to @course.user.name, @course.user %> </h4>
 </div>
 </div>
 
