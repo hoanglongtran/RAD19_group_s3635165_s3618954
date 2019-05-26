@@ -8,6 +8,16 @@
   </h1>
 </div>
 
+<div class="row">
+  <h4>
+    <% if current_user.admin? && !current_user?(@user) %>
+    <%= link_to "Delete User", @user, method: :delete,
+                            data: { confirm: "Are you sure?" } %>
+  <% end %>
+
+  </h4>
+</div>
+
 <ul class="courses">
   <% @courses.each do |course| %> 
     <div class="row">

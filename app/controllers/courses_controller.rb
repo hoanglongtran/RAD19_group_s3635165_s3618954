@@ -16,18 +16,13 @@ class CoursesController < ApplicationController
     @users = User.all
     if params[:category]
       sth = Category.find_by(:category => params[:category])
-      @courses = Course.where(:category_id => sth)
-
       @courses = Course.where(:category_id => sth.id)
     elsif params[:location]
       sth = Location.find_by(:location => params[:location])
-      #a = Course.joins(:courses_locations).where
-      @courses = Course.includes(:locations).where(locations: { id: sth }) 
-     # @courses = Course.where(:course_id => a)
+      @courses = Course.includes(:locations).where(locations: { id: sth })
     else
       @courses = Course.all
     end
-#    @user_name = @courses.user_id.name 
   end
 
   def create
@@ -61,7 +56,7 @@ class CoursesController < ApplicationController
 
   def destroy
     Course.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash[:success] = "Course deleted."
     redirect_to courses_path
   end
 
@@ -77,14 +72,14 @@ class CoursesController < ApplicationController
       end
     end
 
-   def correct_user
-     @course = Course.find(params[:id])
-     @user = @course.user
-     redirect_to(root_url) unless current_user?(@user) || current_user.admin?
-   end
+    def correct_user
+       @course = Course.find(params[:id])
+       @user = @course.user
+       redirect_to(root_url) unless current_user?(@user) || current_user.admin?
+     end
 
-  def admin_user
-    redirect_to(root_url) unless current_user.admin?
-  end
+     def admin_user
+       redirect_to(root_url) unless current_user.admin?
+     end
 
 end
