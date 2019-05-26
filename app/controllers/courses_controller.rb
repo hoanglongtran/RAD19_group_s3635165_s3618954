@@ -80,7 +80,7 @@ class CoursesController < ApplicationController
    def correct_user
      @course = Course.find(params[:id])
      @user = @course.user
-     redirect_to(root_url) unless current_user?(@user)
+     redirect_to(root_url) unless current_user?(@user) || current_user.admin?
    end
 
   def admin_user
