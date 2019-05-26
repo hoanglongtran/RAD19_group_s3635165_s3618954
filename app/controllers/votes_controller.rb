@@ -21,9 +21,15 @@ class VotesController < ApplicationController
   end
 
   def destroy
-	vote = Vote.find_by(user: current_user, course: Course.find(params[:course_id]))
-	vote.destroy
-    	redirect_to :courses, :notice => 'Unvoted!'
+      vote = Vote.find_by(user: current_user, course: Course.find(params[:course_id]))
+      vote.destroy
+      redirect_to :courses, :notice => 'Unvoted!'
+  end
+
+  def remove_all
+    votes = Vote.find_by(course: params[:course_id])
+      votes.destroy
+    redirect_to :courses, :notice => 'Votes reset!'
   end
 
   private

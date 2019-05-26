@@ -15,11 +15,11 @@ class CoursesController < ApplicationController
   def index
     @users = User.all
     if params[:category]
-      sth = Category.find_by(:category => params[:category])
-      @courses = Course.where(:category_id => sth.id)
+      category = Category.find_by(:category => params[:category])
+      @courses = Course.where(:category_id => category.id)
     elsif params[:location]
-      sth = Location.find_by(:location => params[:location])
-      @courses = Course.includes(:locations).where(locations: { id: sth })
+      category = Location.find_by(:location => params[:location])
+      @courses = Course.includes(:locations).where(locations: { id: category })
     else
       @courses = Course.all
     end

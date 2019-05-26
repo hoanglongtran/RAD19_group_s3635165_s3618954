@@ -18,7 +18,11 @@ Rails.application.routes.draw do
   delete '/logout',to: 'sessions#destroy'
   resources :send_feedbacks, only: [:edit]
   resources :courses do
-	resources :votes, only: [:create, :destroy, :update]
+	resources :votes, only: [:create, :destroy, :update] do
+          collection do
+            get 'remove_all'
+          end
+        end
   end
   resources :categories
   resources :locations
