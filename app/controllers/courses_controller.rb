@@ -1,7 +1,8 @@
 class CoursesController < ApplicationController
 
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
+  before_action :admin_user, only: :destroy
 
   def new
     @course = Course.new
@@ -58,6 +59,12 @@ class CoursesController < ApplicationController
     end
   end
 
+  def destroy
+    Course.find(params[:id]).destroy
+    flash[:success] = "User deleted"
+    redirect_to courses_path
+  end
+
   private
     def course_params
       params.require(:course).permit(:name, :prerequisite, :description, :category_id, :location_ids => [])
@@ -75,5 +82,9 @@ class CoursesController < ApplicationController
      @user = @course.user
      redirect_to(root_url) unless current_user?(@user)
    end
+
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 
 end
