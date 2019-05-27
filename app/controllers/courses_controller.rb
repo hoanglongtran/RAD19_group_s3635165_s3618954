@@ -1,7 +1,8 @@
 class CoursesController < ApplicationController
 
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
+  before_action :admin_user, only: :destroy
 
   def new
     @course = Course.new
@@ -14,19 +15,14 @@ class CoursesController < ApplicationController
   def index
     @users = User.all
     if params[:category]
-      sth = Category.find_by(:category => params[:category])
-      @courses = Course.where(:category_id => sth)
-
-      @courses = Course.where(:category_id => sth.id)
+      category = Category.find_by(:category => params[:category])
+      @courses = Course.where(:category_id => category.id)
     elsif params[:location]
-      sth = Location.find_by(:location => params[:location])
-      #a = Course.joins(:courses_locations).where
-      @courses = Course.includes(:locations).where(locations: { id: sth }) 
-     # @courses = Course.where(:course_id => a)
+      category = Location.find_by(:location => params[:location])
+      @courses = Course.includes(:locations).where(locations: { id: category })
     else
       @courses = Course.all
     end
-#    @user_name = @courses.user_id.name 
   end
 
   def create
@@ -58,6 +54,12 @@ class CoursesController < ApplicationController
     end
   end
 
+  def destroy
+    Course.find(params[:id]).destroy
+    flash[:success] = "Course deleted."
+    redirect_to courses_path
+  end
+
   private
     def course_params
       params.require(:course).permit(:name, :prerequisite, :description, :category_id, :location_ids => [])
@@ -70,10 +72,14 @@ class CoursesController < ApplicationController
       end
     end
 
-   def correct_user
-     @course = Course.find(params[:id])
-     @user = @course.user
-     redirect_to(root_url) unless current_user?(@user)
-   end
+    def correct_user
+       @course = Course.find(params[:id])
+       @user = @course.user
+       redirect_to(root_url) unless current_user?(@user) || current_user.admin?
+     end
+
+     def admin_user
+       redirect_to(root_url) unless current_user.admin?
+     end
 
 end
