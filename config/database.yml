@@ -24,6 +24,7 @@ test:
 production:
   <<: *default
   adapter: postgresql
+  host: localhost
   database: myapp_production
   username: myapp
   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
