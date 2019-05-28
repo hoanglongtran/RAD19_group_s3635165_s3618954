@@ -101,14 +101,16 @@
   <div id="coordinatorTab" class="tab-pane fade">
       <ul class="coordinators">
         <% @users.each do |user| %>
-	  <div class="row">
-	    <section class="user_info">
-	      <h1>
-		<%= gravatar_course @user %>
-		<%= link_to user.name, user %>
-	      </h1>
-	    </section>
-	  </div>
+          <% if !user.admin %>
+            <div class="row">
+	      <section class="user_info">
+	        <h1>
+		  <%= gravatar_course @user %>
+		  <%= link_to user.name, user %>
+	        </h1>
+	      </section>
+	    </div>
+          <% end %>
         <% end %>
       </ul>
   </div>
