@@ -5,21 +5,17 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+RAD Course App, by
+Hoang Long Tran s3635165
+Arofando Hadi s3618954
 
-* System dependencies
+We attempted level 80+
 
-* Configuration
+Long spent 30 hours,
+Arofando spent 20 hours
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+https://fierce-taiga-58725.herokuapp.com/
+insert latest deployment log
 
 
 This is the email where the feedbacks are sent to:
