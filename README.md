@@ -7,7 +7,8 @@
 
 * Highest level attempted: 80+
 
-* Time sheet
+* Long spent 30 hours,
+  Arofando spent 20 hours
 
 * Heroku url: https://fierce-taiga-58725.herokuapp.com/
 
