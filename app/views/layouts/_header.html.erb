@@ -18,7 +18,9 @@
             <% (Category.all).each do |cat| %>
             <li><%= link_to cat.category, courses_path(:category=>cat.category)  %></li>
             <% end %>
-            <li><%= link_to "New Category", new_category_path %></li>
+            <% if logged_in? %>
+              <li><%= link_to "New Category", new_category_path %></li>
+            <% end %>
           </ul>
         </li>
 
@@ -31,7 +33,9 @@
             <% (Location.all).each do |loc| %>
             <li><%= link_to loc.location, courses_path(:location=>loc.location)  %></li>
             <% end %>
-            <li><%= link_to "New Location", new_location_path %></li>
+            <% if logged_in? %>
+              <li><%= link_to "New Location", new_location_path %></li>
+            <% end %>
           </ul>
         </li>
 
