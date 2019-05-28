@@ -5,9 +5,10 @@ class Course < ApplicationRecord
   has_many :votes, dependent: :destroy
  
   mount_uploader :picture, PictureUploader
-  validates :name,  presence: true, length: { maximum: 100 },
+  validates :name,  presence: true, length: { minimum: 10, maximum: 100 },
                     uniqueness: { case_sensitive: false }
-  validates :description,  presence: true, length: { maximum: 200 }
+  validates :prerequisite,  presence: true, length: { minimum: 10 }
+  validates :description,  presence: true, length: { minimum: 30, maximum: 200 }
   validate :picture_size
 
   def score
