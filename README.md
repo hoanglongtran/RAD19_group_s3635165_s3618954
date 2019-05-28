@@ -1,25 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+* Long Hoang Tran - s3635165
 
-* Ruby version
+* Arofando Hadi - s3618954
 
-* System dependencies
+* Highest level attempted: 80+
 
-* Configuration
+* Time sheet
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 
 This is the email where the feedbacks are sent to:
