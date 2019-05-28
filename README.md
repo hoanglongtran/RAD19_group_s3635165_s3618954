@@ -1,29 +1,27 @@
 # README
 
+RAD Course App, by <br />
+Hoang Long Tran s3635165 <br />
+Arofando Hadi s3618954<br />
 
-* Long Hoang Tran - s3635165
+We attempted level 80+<br />
 
-* Arofando Hadi - s3618954
+Long spent 30 hours,<br />
+Arofando spent 20 hours<br />
+Heroku url:<br />
+https://fierce-taiga-58725.herokuapp.com/ <br />
+Heroku log:<br />
+2019-05-28T14:10:17.662128+00:00 app[web.1]: I, [2019-05-28T14:10:17.662049 #9]  INFO -- : [e6d4d747-eb31-42a1-a33c-1e9f815fa5ec] Processing by StaticPagesController#home as HTML<br />
+2019-05-28T14:10:17.663452+00:00 app[web.1]: I, [2019-05-28T14:10:17.663382 #9]  INFO -- : [e6d4d747-eb31-42a1-a33c-1e9f815fa5ec]   Rendering static_pages/home.html.erb within layouts/application<br />
+2019-05-28T14:10:17.664000+00:00 app[web.1]: I, [2019-05-28T14:10:17.663937 #9]  INFO -- : [e6d4d747-eb31-42a1-a33c-1e9f815fa5ec]   Rendered static_pages/home.html.erb within layouts/application (0.4ms)<br />
+2019-05-28T14:10:17.665079+00:00 app[web.1]: I, [2019-05-28T14:10:17.665010 #9]  INFO -- : [e6d4d747-eb31-42a1-a33c-1e9f815fa5ec]   Rendered layouts/_shim.html.erb (0.0ms)<br />
+2019-05-28T14:10:17.667773+00:00 app[web.1]: D, [2019-05-28T14:10:17.667700 #9] DEBUG -- : [e6d4d747-eb31-42a1-a33c-1e9f815fa5ec]   [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m<br />
+2019-05-28T14:10:17.669543+00:00 app[web.1]: D, [2019-05-28T14:10:17.669486 #9] DEBUG -- : [e6d4d747-eb31-42a1-a33c-1e9f815fa5ec]   [1m[36mLocation Load (0.7ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m<br />
+2019-05-28T14:10:17.669951+00:00 app[web.1]: I, [2019-05-28T14:10:17.669899 #9]  INFO -- : [e6d4d747-eb31-42a1-a33c-1e9f815fa5ec]   Rendered layouts/_header.html.erb (4.7ms)<br />
+2019-05-28T14:10:17.670471+00:00 app[web.1]: I, [2019-05-28T14:10:17.670401 #9]  INFO -- : [e6d4d747-eb31-42a1-a33c-1e9f815fa5ec]   Rendered layouts/_footer.html.erb (0.3ms)<br />
+2019-05-28T14:10:17.670786+00:00 app[web.1]: I, [2019-05-28T14:10:17.670717 #9]  INFO -- : [e6d4d747-eb31-42a1-a33c-1e9f815fa5ec] Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 1.7ms)<br />
+2019-05-28T14:10:18.493585+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=fierce-taiga-58725.herokuapp.com request_id=b95dfdfc-2749-4421-bb48-729092c6c1c2 fwd="141.168.243.33" dyno=web.1 connect=0ms service=3ms status=200 bytes=207 protocol=https<br />
 
-* Highest level attempted: 80+
-
-* Long spent 30 hours,
-  Arofando spent 20 hours
-
-* Heroku url: https://fierce-taiga-58725.herokuapp.com/
-
-This is the email where the feedbacks are sent to:
-email:    rad.admin@protonmail.com
-password: rad_assignment2019
-
-* Heroku log:
-2019-05-28T14:00:36.453920+00:00 app[web.1]: I, [2019-05-28T14:00:36.453862 #9]  INFO -- : [0e935bd0-d7f8-4daf-8616-fabd90bcb018]   Rendered static_pages/home.html.erb within layouts/application (1.6ms)
-2019-05-28T14:00:36.457158+00:00 app[web.1]: I, [2019-05-28T14:00:36.457100 #9]  INFO -- : [0e935bd0-d7f8-4daf-8616-fabd90bcb018]   Rendered layouts/_shim.html.erb (0.2ms)
-2019-05-28T14:00:36.521346+00:00 app[web.1]: D, [2019-05-28T14:00:36.521219 #9] DEBUG -- : [0e935bd0-d7f8-4daf-8616-fabd90bcb018]   [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
-2019-05-28T14:00:36.561104+00:00 app[web.1]: D, [2019-05-28T14:00:36.560994 #9] DEBUG -- : [0e935bd0-d7f8-4daf-8616-fabd90bcb018]   [1m[36mLocation Load (1.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
-2019-05-28T14:00:36.581078+00:00 app[web.1]: I, [2019-05-28T14:00:36.580814 #9]  INFO -- : [0e935bd0-d7f8-4daf-8616-fabd90bcb018]   Rendered layouts/_header.html.erb (123.1ms)
-2019-05-28T14:00:36.582340+00:00 app[web.1]: I, [2019-05-28T14:00:36.582275 #9]  INFO -- : [0e935bd0-d7f8-4daf-8616-fabd90bcb018]   Rendered layouts/_footer.html.erb (0.5ms)
-2019-05-28T14:00:36.582840+00:00 app[web.1]: I, [2019-05-28T14:00:36.582741 #9]  INFO -- : [0e935bd0-d7f8-4daf-8616-fabd90bcb018] Completed 200 OK in 141ms (Views: 132.7ms | ActiveRecord: 59.6ms)
-2019-05-28T14:00:36.585684+00:00 heroku[router]: at=info method=GET path="/" host=fierce-taiga-58725.herokuapp.com request_id=0e935bd0-d7f8-4daf-8616-fabd90bcb018 fwd="54.79.104.239" dyno=web.1 connect=0ms service=153ms status=200 bytes=3593 protocol=https
-2019-05-28T14:00:36.796078+00:00 heroku[router]: at=info method=GET path="/assets/application-06cd74d6bad620102173fdcc5c2b1f5c399aa2290d2b716b04656eec0c4a7532.css" host=fierce-taiga-58725.herokuapp.com request_id=9d6e7bc3-8b9d-4dd4-bd54-588f42a0f1c0 fwd="54.79.104.239" dyno=web.1 connect=1ms service=7ms status=200 bytes=21144 protocol=https
-2019-05-28T14:00:37.199880+00:00 heroku[router]: at=info method=GET path="/assets/application-dcc0b9c62a97dbf743c5d58f9a8b733cf5bb8a3020bd093886c794def4032eae.js" host=fierce-taiga-58725.herokuapp.com request_id=034e1a49-a1f9-4ccc-8af3-4f5b8bf089bf fwd="54.79.104.239" dyno=web.1 connect=0ms service=4ms status=200 bytes=62699 protocol=https
+This is the email where the feedbacks are sent to:<br />
+email:    rad.admin@protonmail.com<br />
+password: rad_assignment2019<br />
