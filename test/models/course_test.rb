@@ -5,10 +5,11 @@ class CourseTest < ActiveSupport::TestCase
     @user = User.create(name: "asdf", email: "gfd.asd@rmit.edu.au", password: "Foob@ra4", password_confirmation: "Foob@ra4")
     @location = Location.create(location: "asdf")
     @category = Category.create(category: "ghhs")
-    @course = @user.courses.build(name: "something")
+    @course = @user.courses.build(name: "This is a course")
     @course.locations << @location
-    @course.categories << @category
-    @course.description = "This is a description"
+    @category.courses << @course
+    @course.description = "This is a description that is supposed to be more than 30 characters"
+    @course.prerequisite = "This is a another course"
     @course.save
   end
 
