@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def show
-     @user = User.find(params[:id])
+     @user = User.find(params[:id]) or record_not_found
      @courses = Course.where(user: @user)
   end
 
