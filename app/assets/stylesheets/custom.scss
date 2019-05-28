@@ -213,3 +213,14 @@ input {
   margin-top: 45px;
   @include box_sizing;
 }
+
+/* picture */
+
+.content {
+  display: block;
+  margin-left: 10px;
+  img {
+    display: block;
+    padding: 3px 0;
+  }
+}
