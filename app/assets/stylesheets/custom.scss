@@ -14,6 +14,13 @@ $gray-medium-light: #eaeaea;
   box-sizing:		border-box;
 }
 
+.btn-sm {
+   
+   float: right;
+   width: 70px;
+   
+   
+}
 body {
   padding-top: 60px;
 }
@@ -84,6 +91,18 @@ h3 {
 h4 {
   font-size: 3;
   font-weight: bold;
+}
+
+h5 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  padding-bottom: 9px;
+  text-align: center;
+  float: right;
+  font-weight: normal;
+  padding-left: 9px;
+  padding-right: 9px;
+  color: $gray-light;
 }
 
 p {

@@ -6,8 +6,8 @@ class CourseTest < ActiveSupport::TestCase
     @location = Location.create(location: "asdf")
     @category = Category.create(category: "ghhs")
     @course = @user.courses.build(name: "something")
-    @category.courses << @course
     @course.locations << @location
+    @course.categories << @category
     @course.description = "This is a description"
     @course.save
   end

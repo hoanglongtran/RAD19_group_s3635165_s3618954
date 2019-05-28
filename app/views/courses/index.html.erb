@@ -39,17 +39,17 @@
     </h2> 
 
     <h2> Creation Date: <%= course.created_at %></h2>
-
+	
         <% if  Vote.exists?(user: current_user, course: course) && Vote.find_by(user: current_user).vote_type.equal?(-1) %>
             
             <%= form_for course.votes.build, url: course_vote_path(course, Vote.find_by(user: current_user).id), method: :patch do |f| %>
               <%= f.hidden_field :vote_type, value: 1 %>
-              <%= f.submit 'Upvote', class: 'btn btn-default' %>
+              <%= f.submit 'Upvote', class: 'btn btn-secondary btn-sm' %>
             <% end %>
 
         <% elsif Vote.exists?(user: current_user, course: course) && Vote.find_by(user: current_user).vote_type.equal?(1) %>
             <%= form_for course.votes.build, url: course_vote_path(course, Vote.find_by(user: current_user).id), method: :delete do |f| %>
-            <%= f.submit "Upvote", class: 'btn btn-default' %>
+            <%= f.submit "Upvote", class: 'btn btn-secondary btn-sm' %>
             <% end %>
         <% else %>
             <%= form_for course.votes.build, url: course_votes_path(course) do |f| %>
@@ -59,21 +59,21 @@
                     <%= f.hidden_field :user_id, value: nil %> 
               <% end %>
               <%= f.hidden_field :vote_type, value: 1 %>
-              <%= f.submit 'Upvote', class: 'btn btn-default' %>
+              <%= f.submit 'Upvote', class: 'btn btn-secondary btn-sm' %>
             <% end %>
         <% end %>
     
-    <h2> Score: <%= course.score %> </h2>
+     <h5> <%= course.score %> </h5>
         <% if  Vote.exists?(user: current_user, course: course) && Vote.find_by(user: current_user).vote_type.equal?(1) %>
             
             <%= form_for course.votes.build, url: course_vote_path(course, Vote.find_by(user: current_user).id), method: :patch do |f| %>
               <%= f.hidden_field :vote_type, value: -1 %>
-              <%= f.submit 'Downvote', class: 'btn btn-default' %>
+              <%= f.submit 'Downvote', class: 'btn btn-secondary btn-sm' %>
             <% end %>
 
         <% elsif Vote.exists?(user: current_user, course: course) && Vote.find_by(user: current_user).vote_type.equal?(-1) %>
             <%= form_for course.votes.build, url: course_vote_path(course, Vote.find_by(user: current_user).id), method: :delete do |f| %>
-            <%= f.submit "Downvote", class: 'btn btn-default' %>
+            <%= f.submit "Downvote", class: 'btn btn-secondary btn-sm' %>
             <% end %>
         
         <% else %>
@@ -84,7 +84,7 @@
                     <%= f.hidden_field :user_id, value: nil %> 
               <% end %>
               <%= f.hidden_field :vote_type, value: -1 %>
-              <%= f.submit 'Downvote', class: 'btn btn-default' %>
+              <%= f.submit 'Downvote', class: 'btn btn-secondary btn-sm' %>
             <% end %>
         <% end %>
     
