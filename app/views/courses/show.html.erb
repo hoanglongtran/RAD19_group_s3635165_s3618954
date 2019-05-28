@@ -33,7 +33,7 @@
 
   <div class = "col-md-2">
     <div class = "row">
-      <h4> <%= gravatar_course @user %> </h4>
+      <h4> <%= image_tag @course.picture.url if @course.picture? %> </h4>
     </div>
     <div class = "row">
       <h4> Coordinator: <%= link_to @course.user.name, @course.user %> </h4>
