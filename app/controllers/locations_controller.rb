@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
     if @location.save
       #
       flash[:success] = "Location successfully created!"
-      redirect_to @location
+      redirect_to courses_path
     else
       render 'new'
     end

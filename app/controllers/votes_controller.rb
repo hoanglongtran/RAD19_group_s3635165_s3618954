@@ -28,7 +28,9 @@ class VotesController < ApplicationController
 
   def remove_all
     votes = Vote.find_by(course: params[:course_id])
+    if votes 
       votes.destroy
+    end
     redirect_to :courses, :notice => 'Votes reset!'
   end
 

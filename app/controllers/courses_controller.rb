@@ -27,14 +27,11 @@ class CoursesController < ApplicationController
 
   def create
     @course = current_user.courses.build(course_params)
-    respond_to do |format|
-      if @course.save
-        format.html { redirect_to @course, notice: "Course successfully created!" }
-        format.json { render :show, status: :created, location: @course }
-      else
-        format.html { render :new }
-        format.json { render json: @course.errors, status: :unprocessable_entity }
-      end
+    if @course.save
+       flash[:success] = "Course successfully created!"
+       redirect_to @course
+    else
+       render 'new'
     end
   end
 
@@ -44,13 +41,11 @@ class CoursesController < ApplicationController
 
   def update
     @course = Course.find(params[:id])
-    respond_to do |format|
-      if @course.update_attributes(course_params)
-        format.html { redirect_to @course, notice: "Course successfully updated!" }
-        format.json { render :show, status: :updated, location: @course }
-      else
-        render 'edit'
-      end
+    if @course.update_attributes(course_params)
+       flash[:success] = "Course successfully updated!"
+       redirect_to @course
+    else
+      render 'edit'
     end
   end
 
