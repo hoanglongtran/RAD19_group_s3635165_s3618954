@@ -5,7 +5,10 @@
 <div class = "row">
   <div class = "col-md-8">
     <h3> Prerequisite: <%= @course.prerequisite %> </h3>
-    <h4> Category: <%= link_to @course.category.category, course_path(:category => @course.category.category) %> </h4>
+    <h4> Category: <% @course.categories.each do |category| %>
+        <%= link_to category.category, course_path(:category => category.category) %>
+      <% end %> 
+    </h4>
     <h4> 
       Location: <% @course.locations.each do |location| %>
         <%= link_to location.location, course_path(:location => location.location) %>

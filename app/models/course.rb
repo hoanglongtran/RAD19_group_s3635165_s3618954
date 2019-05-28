@@ -7,7 +7,6 @@ class Course < ApplicationRecord
   validates :name,  presence: true, length: { maximum: 100 },
                     uniqueness: { case_sensitive: false }
   validates :description,  presence: true, length: { maximum: 200 }
-  validates :category_id,  presence: true
 
   def score
 	votes.sum(:vote_type)

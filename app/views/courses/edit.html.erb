@@ -17,10 +17,10 @@
 
     <div class="field">
       <%= f.label :category %>
-      <% (Category.all).each do |cat| %>
-        <div class="category">
-          <%= cat.category %>
-          <%= f.radio_button :category_id, cat.id %>
+      <%= f.collection_check_boxes :category_ids, Category.all, :id, :category do |b| %>
+        <div class="collection-check-box">
+          <%= b.check_box %>
+          <%= b.label %>
         </div>
       <% end %>
     </div>
