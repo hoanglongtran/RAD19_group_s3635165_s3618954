@@ -35,6 +35,8 @@
       <% end %>
     </div>
 
+    <%= f.file_field :picture %>
+
     <% hidden_field_tag :user, current_user %>
 
     <%= f.submit "Create new course", class: "btn btn-primary" %>

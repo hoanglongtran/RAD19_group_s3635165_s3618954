@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_100325) do
     t.datetime "updated_at", null: false
     t.string "prerequisite"
     t.text "description"
+    t.string "picture"
     t.index ["category_id"], name: "index_courses_on_category_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
