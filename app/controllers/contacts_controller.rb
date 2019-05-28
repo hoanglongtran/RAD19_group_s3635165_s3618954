@@ -8,6 +8,7 @@ def new
     
     if @contact.save
       ContactsMailer.send_feedback(@contact).deliver
+      flash[:success] = "Thank you for your feedback!"
       redirect_to :courses
     else
       render :new
