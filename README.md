@@ -11,8 +11,8 @@ We attempted level 80+
 
 Long spent 30 hours,
 Arofando spent 20 hours
-
-https://fierce-taiga-58725.herokuapp.com/
+Heroku url:
+https://fierce-taiga-58725.herokuapp.com/ <br />
 Heroku log:
 2019-05-28T14:10:17.662128+00:00 app[web.1]: I, [2019-05-28T14:10:17.662049 #9]  INFO -- : [e6d4d747-eb31-42a1-a33c-1e9f815fa5ec] Processing by StaticPagesController#home as HTML<br />
 2019-05-28T14:10:17.663452+00:00 app[web.1]: I, [2019-05-28T14:10:17.663382 #9]  INFO -- : [e6d4d747-eb31-42a1-a33c-1e9f815fa5ec]   Rendering static_pages/home.html.erb within layouts/application<br />
