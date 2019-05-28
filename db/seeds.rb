@@ -7,8 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 u1 = User.new(name:  "admin",
-             email: "admin.admin@rmit.edu.au",
+             email: "admin",
              password:              "password",
-             password_confirmation: "password").save(validate: false)
+             password_confirmation: "password",
+	     admin: 1).save(validate: false)
 
 
