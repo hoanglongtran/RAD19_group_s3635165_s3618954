@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     if @user.save
 	log_in @user
 	flash[:success] = "Log in successfully!"
-	redirect_to @user
+	redirect_to :courses
     else
       render 'new'
     end

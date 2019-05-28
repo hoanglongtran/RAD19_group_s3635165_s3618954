@@ -8,6 +8,8 @@ class CourseTest < ActiveSupport::TestCase
     @course = @user.courses.build(name: "something")
     @category.courses << @course
     @course.locations << @location
+    @course.description = "This is a description"
+    @course.save
   end
 
   test "should be valid" do
