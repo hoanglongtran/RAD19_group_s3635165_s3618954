@@ -8,7 +8,7 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.new(location_params)    # Not the final implementation!
+    @location = Location.new(location_params)    
     if @location.save
       #
       flash[:success] = "Location successfully created!"

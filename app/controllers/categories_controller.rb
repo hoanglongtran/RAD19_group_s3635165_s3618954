@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(category_params)    # Not the final implementation!
+    @category = Category.new(category_params)    
     if @category.save
       #
       flash[:success] = "Category successfully created!"

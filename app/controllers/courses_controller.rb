@@ -16,10 +16,10 @@ class CoursesController < ApplicationController
     @users = User.all
     if params[:category]
       category = Category.find_by(:category => params[:category])
-      @courses = Course.where(:category_id => category.id)
+      @courses = Course.includes(:categories).where(categories: { id: category })
     elsif params[:location]
-      category = Location.find_by(:location => params[:location])
-      @courses = Course.includes(:locations).where(locations: { id: category })
+      location = Location.find_by(:location => params[:location])
+      @courses = Course.includes(:locations).where(locations: { id: location })
     else
       @courses = Course.all
     end
@@ -62,7 +62,7 @@ class CoursesController < ApplicationController
 
   private
     def course_params
-      params.require(:course).permit(:name, :prerequisite, :description, :category_id, :location_ids => [])
+      params.require(:course).permit(:name, :prerequisite, :description, :category_id => [], :location_ids => [])
     end
 
     def logged_in_user
